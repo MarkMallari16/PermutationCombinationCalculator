@@ -29,6 +29,7 @@ function calculate() {
     if (!isNaN(n) && !isNaN(r) && nInput === n.toString() && rInput === r.toString()) {
         if (n < 1) {
             alert("Please provide positive numbers");
+            resultContainer.classList.add("hide-container");
         } else {
             resultContainer.classList.remove("hide-container");
             if (formula === "Permutation") {
