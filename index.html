@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Permutation & Combination Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logo.png" />
-    <script
-      src="https://kit.fontawesome.com/cb37e64477.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
-  </head>
 
-  <body>
-    <div class="spinner-container">
-      <div class="spinner"></div>
-    </div>
-    <section class="permutation-combination-container hide-container" id="main">
-      <div class="container">
-        <div class="content">
-          <div class="header">
-            <h1>
-              Permutation <span class="highlightedText">&</span> Combination
-              Calculator
-            </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Permutation & Combination Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" />
+  <script src="https://kit.fontawesome.com/cb37e64477.js" crossorigin="anonymous"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+  <section class="permutation-combination-container hide-container" id="main">
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <h1>
+            Permutation <span class="highlightedText">&</span> Combination
+            Calculator
+          </h1>
+        </div>
+        <div class="fields">
+          <div class="field-child field-child-1">
+            <label for="field-1">Enter n:</label>
+            <input type="text" class="field" id="field-1" placeholder="2" />
           </div>
-          <div class="fields">
-            <div class="field-child field-child-1">
-              <label for="field-1">Enter n:</label>
-              <input type="text" class="field" id="field-1" placeholder="2" />
+          <div class="field-child field-child-2">
+            <label for="field-2">Enter r:</label>
+            <input type="text" class="field" id="field-2" placeholder="5" />
+          </div>
+          <div class="formula-container">
+            <select name="formula" id="formula">
+              <option value="Select Formula" disabled>Select Formula</option>
+              <option value="Permutation">Permutation</option>
+              <option value="Combination">Combination</option>
+            </select>
+            <div class="button-container">
+              <button class="button calculateBtn" id="calculateBtn" onclick="calculate()">
+                Calculate <i class="fa-solid fa-arrow-right"></i>
+              </button>
             </div>
-            <div class="field-child field-child-2">
-              <label for="field-2">Enter r:</label>
-              <input type="text" class="field" id="field-2" placeholder="5" />
-            </div>
-            <div class="formula-container">
-              <select name="formula" id="formula">
-                <option value="Select Formula" disabled>Select Formula</option>
-                <option value="Permutation">Permutation</option>
-                <option value="Combination">Combination</option>
-              </select>
-              <div class="button-container">
-                <button
-                  class="button calculateBtn"
-                  id="calculateBtn"
-                  onclick="calculate()"
-                >
-                  Calculate <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-            <div class="result-container hide-container" onclick="calculate()">
-              <div class="text">
-                <h3>Formula: </h3>
-                <h3>= <span class="result" id="formulaText"></span></h3>
-                <h3>Result: <span class="result highlightedText" id="resultText"></span></h3>
-              </div>
+          </div>
+          <div class="result-container hide-container" onclick="calculate()">
+            <div class="text">
+              <h3>Formula: </h3>
+              <h3>=<span id="formulaText"></span></h3>
+              <h3>= <span class="result" id="formulaTextResult"></span></h3>
+              <h3>Result: <span class="result highlightedText" id="resultText"></span></h3>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <script src="index.js"></script>
-  
-  </body>
+    </div>
+  </section>
+  <script src="index.js"></script>
+
+</body>
+
 </html>

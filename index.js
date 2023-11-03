@@ -10,8 +10,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }, 2000)
 })
 function calculate() {
-    const permutationFormula = "Permutations formula: \( _nP_r = \frac{n!}{(n - r)!} \)"
-    const combinationFormula = "Combinations formula: \( _nC_r = \frac{n!}{r! \times (n - r)!} \)";
 
 
     const nInput = document.getElementById("field-1").value;
@@ -25,37 +23,44 @@ function calculate() {
     const formula = document.getElementById("formula").value;
     const resultContainer = document.querySelector(".result-container");
 
-    let result = 0;
     let formulaText = "";
+    const permutationFormula = "\n\\({n}P{r} = \\frac{n!}{(n - r)!}\\)"
+    const combinationFormula = "\n\\({n}C{r} = \\frac{n!}{r! \\times (n - r)!} \\)";
+
+    let result = 0;
+    let formulaTextResult = "";
     let resultText = "";
 
     if (!isNaN(n) && !isNaN(r) && nInput === n.toString() && rInput === r.toString()) {
-       
+
         if (n < 1 || r < 1) {
             alert("Invalid Input: Please Provide postive numbers");
-        }else if (n < r){
-            alert("Invalid Input: n must be greater than or equal to r"); 
-        }else if (n > 30){
+        } else if (n < r) {
+            alert("Invalid Input: n must be greater than or equal to r");
+        } else if (n > 30) {
             alert("Invalid Input: n should not exceed 30");
-        }else{
+        } else {
             resultContainer.classList.remove("hide-container");
-           
+
             if (formula === "Permutation") {
                 result = calculatePermutations(n, r);
-                formulaText = `\\(_{${n}}P_{${r}} = \\frac{${n}!}{(${n} - ${r})!}\\)`;
+                formulaText = permutationFormula;
+                formulaTextResult = `\\(_{${n}}P_{${r}} = \\frac{${n}!}{(${n} - ${r})!}\\)`;
             } else if (formula === "Combination") {
                 result = calculateCombinations(n, r);
-                formulaText = `\\(${n}C${r} = \\frac{${n}!}{${r}! \\times (${n} - ${r})!} = ${result}\\)`;
+                formulaText = combinationFormula;
+                formulaTextResult = `\\(${n}C${r} = \\frac{${n}!}{${r}! \\times (${n} - ${r})!} = ${result}\\)`;
             }
 
             resultText = `${result.toFixed(2)}`;
         }
-        
+
     } else {
         resultContainer.classList.add("hide-container");
         alert("You must enter a number");
     }
     document.getElementById("formulaText").textContent = formulaText;
+    document.getElementById("formulaTextResult").textContent = formulaTextResult;
     document.getElementById("resultText").textContent = resultText;
 
     MathJax.typeset();
