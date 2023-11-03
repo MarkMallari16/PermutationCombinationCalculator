@@ -22,8 +22,6 @@ body {
 
 .permutation-combination-container {
     height: 100vh;
-   
-  
     background-image: url(bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -132,11 +130,14 @@ select:focus {
     transform: scaleX(1);
 }
 
-.text {
-    margin-top: 40px;
-    text-align: center;
-}
 
+.result-container{
+    
+    margin-top: 30px;
+    padding: 12px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
 .hide-container {
     display: none;
 }
@@ -172,10 +173,12 @@ select:focus {
 
 @media screen and (max-width: 768px) {
     .permutation-combination-container{
+        background: none;
         padding: 20px;
     }
     .header {
-        font-size: clamp(0.5rem, 0.75rem + 4vw, 0.7rem);
+        font-size: 1rem;
+       
         margin-bottom: 10px;
     }
 }
